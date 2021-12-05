@@ -23,6 +23,11 @@ namespace Triaje
         {
             InitializeComponent();
             cargarDatos();
+
+            listArchivos.Items.Clear();
+            listArchivos.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4" ,"5","6" }));
+            listArchivos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listArchivos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         public void cargarDatos()
         {
@@ -70,6 +75,11 @@ namespace Triaje
             Hide();
             FrameArchivo host = new FrameArchivo(this, leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree"));
             host.ShowDialog();
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,12 +29,18 @@ namespace Triaje
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonAddHost = new System.Windows.Forms.Button();
             this.labelCreditos = new System.Windows.Forms.Label();
             this.comboHosts = new System.Windows.Forms.ComboBox();
             this.buttonDeleteHost = new System.Windows.Forms.Button();
             this.listArchivos = new System.Windows.Forms.ListView();
+            this.columnId = new System.Windows.Forms.ColumnHeader();
+            this.columnNombre = new System.Windows.Forms.ColumnHeader();
+            this.columnPath = new System.Windows.Forms.ColumnHeader();
+            this.columnHash = new System.Windows.Forms.ColumnHeader();
+            this.columnRemoteHash = new System.Windows.Forms.ColumnHeader();
             this.buttonAddFile = new System.Windows.Forms.Button();
             this.buttonDeleteFile = new System.Windows.Forms.Button();
             this.labelIP = new System.Windows.Forms.Label();
@@ -42,6 +48,7 @@ namespace Triaje
             this.buttonModificarFile = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.columnVerificado = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -102,12 +109,43 @@ namespace Triaje
             // 
             // listArchivos
             // 
+            this.listArchivos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnId,
+            this.columnNombre,
+            this.columnPath,
+            this.columnHash,
+            this.columnRemoteHash,
+            this.columnVerificado});
             this.listArchivos.HideSelection = false;
+            this.listArchivos.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.listArchivos.Location = new System.Drawing.Point(12, 150);
             this.listArchivos.Name = "listArchivos";
             this.listArchivos.Size = new System.Drawing.Size(757, 368);
             this.listArchivos.TabIndex = 6;
+            this.listArchivos.TileSize = new System.Drawing.Size(50, 50);
             this.listArchivos.UseCompatibleStateImageBehavior = false;
+            this.listArchivos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnId
+            // 
+            this.columnId.Text = "ID";
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.Text = "Nombre";
+            // 
+            // columnPath
+            // 
+            this.columnPath.Text = "Path";
+            // 
+            // columnHash
+            // 
+            this.columnHash.Text = "Hash";
+            // 
+            // columnRemoteHash
+            // 
+            this.columnRemoteHash.Text = "R.Hash";
             // 
             // buttonAddFile
             // 
@@ -184,6 +222,11 @@ namespace Triaje
             this.buttonStart.TabIndex = 13;
             this.buttonStart.Text = "[CHECK]";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
+            // columnVerificado
+            // 
+            this.columnVerificado.Text = "Verificado";
             // 
             // FrameInicial
             // 
@@ -227,6 +270,12 @@ namespace Triaje
         private System.Windows.Forms.Button buttonModificarFile;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.ColumnHeader columnId;
+        private System.Windows.Forms.ColumnHeader columnNombre;
+        private System.Windows.Forms.ColumnHeader columnPath;
+        private System.Windows.Forms.ColumnHeader columnHash;
+        private System.Windows.Forms.ColumnHeader columnRemoteHash;
+        private System.Windows.Forms.ColumnHeader columnVerificado;
     }
 }
 
