@@ -19,7 +19,9 @@ namespace Triaje
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrameInicial());
+            FramePrincipal inicial = new FramePrincipal();
+            inicial.Show();
+            Application.Run();
         }
     }
 

@@ -76,18 +76,16 @@ namespace Triaje
             file.Close();
         }
 
-        public void descargarArchivo(string pathRemote,string pass)
+        public void descargarArchivoAsincrono(string pathRemote,string pass,string nombreArchivo)
         {
             Thread hiloParaDescargar = new Thread(delegate () {
-                //string pathLocalFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "passwd");
-                string pathLocalFile = Path.Combine(Application.UserAppDataPath + "/" + nombre + "/", "passwd");
                 using (SftpClient sftp = new SftpClient(ip, user, pass))
                 {
                     try
                     {
                         sftp.Connect();
 
-                        using (Stream fileStream = File.OpenWrite(pathLocalFile))
+                        using (Stream fileStream = File.OpenWrite(Application.UserAppDataPath + "/" + nombre + "/"+nombreArchivo))
                         {
                             sftp.DownloadFile(pathRemote, fileStream);
                         }
@@ -96,13 +94,34 @@ namespace Triaje
                     }
                     catch (Exception er)
                     {
-                        Console.WriteLine("An exception has been caught " + er.ToString());
+                        Debug.WriteLine("Error al descargar archivo remoto " + er.ToString());
                     }
                 }
             });
-
             hiloParaDescargar.Start();
+        }
+        public int descargarArchivo(string pathRemote, string pass, string nombreArchivo)
+        {
+            using (SftpClient sftp = new SftpClient(ip, user, pass))
+            {
+                try
+                {
+                    sftp.Connect();
 
+                    using (Stream fileStream = File.OpenWrite(Application.UserAppDataPath + "/" + nombre + "/" + nombreArchivo))
+                    {
+                        sftp.DownloadFile(pathRemote, fileStream);
+                    }
+
+                    sftp.Disconnect();
+                    return 0;
+                }
+                catch (Exception er)
+                {
+                    Debug.WriteLine("Error al descargar archivo remoto " + er.ToString());
+                    return 1;
+                }
+            }
         }
     }
 

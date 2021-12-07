@@ -30,6 +30,7 @@ namespace Triaje
         private void InitializeComponent()
         {
             System.Windows.Forms.Label labelUser;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrameHost));
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.labelTituloHost = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
@@ -56,13 +57,14 @@ namespace Triaje
             // buttonCancelar
             // 
             this.buttonCancelar.AccessibleName = "buttonCancelar";
+            this.buttonCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonCancelar.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCancelar.Location = new System.Drawing.Point(299, 239);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(96, 32);
             this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // labelTituloHost
@@ -128,19 +130,21 @@ namespace Triaje
             // buttonAceptar
             // 
             this.buttonAceptar.AccessibleName = "buttonAceptar";
+            this.buttonAceptar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonAceptar.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAceptar.Location = new System.Drawing.Point(90, 239);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(96, 32);
             this.buttonAceptar.TabIndex = 11;
             this.buttonAceptar.Text = "Aceptar";
-            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.UseVisualStyleBackColor = false;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // FrameHost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(484, 311);
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.textUser);
@@ -151,6 +155,8 @@ namespace Triaje
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelTituloHost);
             this.Controls.Add(this.buttonCancelar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrameHost";
             this.Text = "Host";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrameHost_FormClosing);

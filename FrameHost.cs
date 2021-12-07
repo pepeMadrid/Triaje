@@ -12,8 +12,8 @@ namespace Triaje
 {
     public partial class FrameHost : Form
     {
-        private FrameInicial frameInicial;
-        public FrameHost(FrameInicial frameInicial)
+        private FramePrincipal frameInicial;
+        public FrameHost(FramePrincipal frameInicial)
         {
             this.frameInicial = frameInicial;
             InitializeComponent();
@@ -22,19 +22,8 @@ namespace Triaje
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
-            frameInicial.Show();
-
-        }
-
-        private void FrameHost_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Close();
-            frameInicial.Show();
-        }
-
-        private void FrameHost_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            frameInicial.Show();
+            FramePrincipal framePrincipal = new FramePrincipal();
+            framePrincipal.Show();
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
@@ -42,8 +31,14 @@ namespace Triaje
             HostObject host = new HostObject(textNombre.Text,textIP.Text,textUser.Text);
             host.hostToArchivo(host);
             Close();
-            frameInicial.cargarDatos();
-            frameInicial.Show();
+            FramePrincipal framePrincipal = new FramePrincipal();
+            framePrincipal.Show();
+
+        }
+
+        private void FrameHost_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
         }
     }
 }
