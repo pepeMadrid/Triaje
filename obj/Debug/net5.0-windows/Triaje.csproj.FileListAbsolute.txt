@@ -18,7 +18,6 @@ C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\ne
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\bin\Debug\net5.0-windows\Renci.SshNet.dll
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.csproj.CopyComplete
-C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FrameInicial.resources
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FrameHost.resources
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FrameArchivo.resources
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FramePrincipal.resources

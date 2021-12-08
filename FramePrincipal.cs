@@ -136,7 +136,9 @@ namespace Triaje
 
         private void buttonModificarHost_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            FrameHost hostFrame = new FrameHost(this, leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree"));
+            hostFrame.Show();
         }
 
         private void FramePrincipal_FormClosing(object sender, FormClosingEventArgs e)

@@ -4,9 +4,6 @@
     <Compile Update="FrameArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrameInicial.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FramePrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
