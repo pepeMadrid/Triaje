@@ -103,6 +103,7 @@ namespace Triaje
             // 
             this.buttonDeleteHost.AccessibleName = "buttonDeleteHost";
             this.buttonDeleteHost.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonDeleteHost.Enabled = false;
             this.buttonDeleteHost.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonDeleteHost.Location = new System.Drawing.Point(129, 112);
             this.buttonDeleteHost.Name = "buttonDeleteHost";
@@ -167,6 +168,7 @@ namespace Triaje
             // 
             this.buttonAddFile.AccessibleName = "buttonAddFile";
             this.buttonAddFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonAddFile.Enabled = false;
             this.buttonAddFile.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddFile.Location = new System.Drawing.Point(462, 112);
             this.buttonAddFile.Name = "buttonAddFile";
@@ -180,6 +182,7 @@ namespace Triaje
             // 
             this.buttonDeleteFile.AccessibleName = "buttonDeleteFile";
             this.buttonDeleteFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonDeleteFile.Enabled = false;
             this.buttonDeleteFile.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonDeleteFile.Location = new System.Drawing.Point(572, 112);
             this.buttonDeleteFile.Name = "buttonDeleteFile";
@@ -192,7 +195,9 @@ namespace Triaje
             // 
             this.labelIP.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.labelIP.AutoSize = true;
+            this.labelIP.BackColor = System.Drawing.Color.Black;
             this.labelIP.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelIP.ForeColor = System.Drawing.Color.Lime;
             this.labelIP.Location = new System.Drawing.Point(361, 46);
             this.labelIP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelIP.Name = "labelIP";
@@ -202,8 +207,9 @@ namespace Triaje
             // 
             // buttonModificarHost
             // 
-            this.buttonModificarHost.AccessibleName = "buttonAddHost";
+            this.buttonModificarHost.AccessibleName = "buttonMoficarHost";
             this.buttonModificarHost.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonModificarHost.Enabled = false;
             this.buttonModificarHost.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonModificarHost.Location = new System.Drawing.Point(242, 112);
             this.buttonModificarHost.Name = "buttonModificarHost";
@@ -217,6 +223,7 @@ namespace Triaje
             // 
             this.buttonModificarFile.AccessibleName = "buttonDeleteFile";
             this.buttonModificarFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonModificarFile.Enabled = false;
             this.buttonModificarFile.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonModificarFile.Location = new System.Drawing.Point(682, 112);
             this.buttonModificarFile.Name = "buttonModificarFile";
@@ -230,13 +237,14 @@ namespace Triaje
             this.textPass.Location = new System.Drawing.Point(511, 46);
             this.textPass.Name = "textPass";
             this.textPass.PasswordChar = '*';
-            this.textPass.Size = new System.Drawing.Size(204, 43);
+            this.textPass.Size = new System.Drawing.Size(258, 43);
             this.textPass.TabIndex = 12;
             // 
             // buttonStart
             // 
             this.buttonStart.AccessibleName = "buttonStart";
             this.buttonStart.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonStart.Enabled = false;
             this.buttonStart.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStart.Location = new System.Drawing.Point(350, 85);
             this.buttonStart.Name = "buttonStart";

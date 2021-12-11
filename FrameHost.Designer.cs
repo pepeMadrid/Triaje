@@ -47,7 +47,7 @@ namespace Triaje
             labelUser.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             labelUser.AutoSize = true;
             labelUser.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            labelUser.Location = new System.Drawing.Point(38, 176);
+            labelUser.Location = new System.Drawing.Point(56, 183);
             labelUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             labelUser.Name = "labelUser";
             labelUser.Size = new System.Drawing.Size(55, 22);
@@ -59,7 +59,7 @@ namespace Triaje
             this.buttonCancelar.AccessibleName = "buttonCancelar";
             this.buttonCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonCancelar.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelar.Location = new System.Drawing.Point(299, 239);
+            this.buttonCancelar.Location = new System.Drawing.Point(320, 255);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(96, 32);
             this.buttonCancelar.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Triaje
             this.labelNombre.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNombre.Location = new System.Drawing.Point(28, 67);
+            this.labelNombre.Location = new System.Drawing.Point(46, 74);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(87, 22);
@@ -94,7 +94,7 @@ namespace Triaje
             // textNombre
             // 
             this.textNombre.AccessibleName = "textNombre";
-            this.textNombre.Location = new System.Drawing.Point(157, 69);
+            this.textNombre.Location = new System.Drawing.Point(175, 76);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(250, 23);
             this.textNombre.TabIndex = 6;
@@ -102,7 +102,7 @@ namespace Triaje
             // textIP
             // 
             this.textIP.AccessibleName = "textIP";
-            this.textIP.Location = new System.Drawing.Point(157, 123);
+            this.textIP.Location = new System.Drawing.Point(175, 130);
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(250, 23);
             this.textIP.TabIndex = 8;
@@ -112,7 +112,7 @@ namespace Triaje
             this.labelIP.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.labelIP.AutoSize = true;
             this.labelIP.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelIP.Location = new System.Drawing.Point(50, 121);
+            this.labelIP.Location = new System.Drawing.Point(68, 128);
             this.labelIP.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelIP.Name = "labelIP";
             this.labelIP.Size = new System.Drawing.Size(34, 22);
@@ -122,7 +122,7 @@ namespace Triaje
             // textUser
             // 
             this.textUser.AccessibleName = "textUser";
-            this.textUser.Location = new System.Drawing.Point(157, 178);
+            this.textUser.Location = new System.Drawing.Point(175, 185);
             this.textUser.Name = "textUser";
             this.textUser.Size = new System.Drawing.Size(250, 23);
             this.textUser.TabIndex = 10;
@@ -132,7 +132,7 @@ namespace Triaje
             this.buttonAceptar.AccessibleName = "buttonAceptar";
             this.buttonAceptar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonAceptar.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAceptar.Location = new System.Drawing.Point(90, 239);
+            this.buttonAceptar.Location = new System.Drawing.Point(47, 255);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(96, 32);
             this.buttonAceptar.TabIndex = 11;

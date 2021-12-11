@@ -13,7 +13,7 @@ using System.Diagnostics;
 using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
-
+using System.Net.NetworkInformation;
 
 namespace Triaje
 {
@@ -101,6 +101,10 @@ namespace Triaje
         {
             labelIP.Text = leerDatosHost(Application.UserAppDataPath+@"\"+comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem+".f1rstree").getIP();
             cargarArchivos();
+            buttonDeleteHost.Enabled = true;
+            buttonModificarHost.Enabled = true;
+            buttonAddFile.Enabled = true;
+            buttonStart.Enabled = true;
         }
 
         private void buttonAddFile_Click(object sender, EventArgs e)
@@ -112,12 +116,34 @@ namespace Triaje
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            HostObject host = leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree");
-            foreach(ArchivoObject archivo in host.getArchivos())
+            try
             {
-                host.descargarArchivo(archivo.getPath(),textPass.Text,archivo.getNombre()+".remote");
+            HostObject host = leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree");
+            //comprobar conectividad
+            //ip - timeout - buffer - pingoptions
+            PingReply reply = new Ping().Send(host.getIP(), 2000, new byte[32], new PingOptions());
+                if (reply.Status == IPStatus.Success)
+                {
+                    foreach (ArchivoObject archivo in host.getArchivos())
+                    {
+                        host.descargarArchivo(archivo.getPath(), textPass.Text, archivo.getNombre() + ".remote");
+                    }
+                    cargarArchivos();
+                }
+                else
+                {
+                    Hide();
+                    FrameInfo frameInfo = new FrameInfo(this, "Fallo de conectividad comprueba ip");
+                    frameInfo.Show();
+                }
             }
-            cargarArchivos();
+            catch (Exception error)
+            {
+                Hide();
+                FrameInfo frameInfo = new FrameInfo(this, error.ToString());
+                frameInfo.Show();
+            }
+            textPass.Text = "";
         }
 
         private void buttonDeleteHost_Click(object sender, EventArgs e)
@@ -127,7 +153,6 @@ namespace Triaje
             Hide();
             FramePrincipal framePrincipal = new FramePrincipal();
             framePrincipal.Show();
-
         }
         private void comboHosts_Click(object sender, EventArgs e)
         {
