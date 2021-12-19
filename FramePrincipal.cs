@@ -19,13 +19,12 @@ namespace Triaje
 {
     public partial class FramePrincipal : Form
     {
-        ArrayList hosts = new ArrayList();
+        private ArrayList hosts = new ArrayList();
         
         public FramePrincipal()
         {
             InitializeComponent();
             cargarDatos();
-            //listArchivos.Items.Add(new ListViewItem(new[] { "1", "2", "3", "4" ,"5","6" }));
             listArchivos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listArchivos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
@@ -71,7 +70,6 @@ namespace Triaje
                 hosts.Add(leerDatosHost(dir+@"\"+dir.Split(@"\").Last()+".f1rstree"));
                 HostObject host = (HostObject)hosts[x];
                 comboHosts.Items.Add(host.getNombre());
-                Debug.WriteLine(host.getNombre());
                 x++;
             }
         }
@@ -174,6 +172,13 @@ namespace Triaje
         private void FramePrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonPools_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FramePools hostPools = new FramePools(this);
+            hostPools.Show();
         }
     }
 }

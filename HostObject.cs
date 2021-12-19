@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Renci.SshNet;
-using Renci.SshNet.Sftp;
 using System.IO;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -64,7 +59,6 @@ namespace Triaje
         }
         public void hostToArchivo(HostObject host)
         {
-            //Debug.WriteLine(Application.UserAppDataPath);
             if (!Directory.Exists(Application.UserAppDataPath + "/" + nombre))
             {
                 Directory.CreateDirectory(Application.UserAppDataPath + "/" + nombre);

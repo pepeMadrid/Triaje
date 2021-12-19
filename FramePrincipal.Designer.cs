@@ -47,7 +47,7 @@ namespace Triaje
             this.buttonDeleteFile = new System.Windows.Forms.Button();
             this.labelIP = new System.Windows.Forms.Label();
             this.buttonModificarHost = new System.Windows.Forms.Button();
-            this.buttonModificarFile = new System.Windows.Forms.Button();
+            this.buttonPools = new System.Windows.Forms.Button();
             this.textPass = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -219,18 +219,18 @@ namespace Triaje
             this.buttonModificarHost.UseVisualStyleBackColor = false;
             this.buttonModificarHost.Click += new System.EventHandler(this.buttonModificarHost_Click);
             // 
-            // buttonModificarFile
+            // buttonPools
             // 
-            this.buttonModificarFile.AccessibleName = "buttonDeleteFile";
-            this.buttonModificarFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonModificarFile.Enabled = false;
-            this.buttonModificarFile.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonModificarFile.Location = new System.Drawing.Point(682, 112);
-            this.buttonModificarFile.Name = "buttonModificarFile";
-            this.buttonModificarFile.Size = new System.Drawing.Size(87, 32);
-            this.buttonModificarFile.TabIndex = 11;
-            this.buttonModificarFile.Text = "* FILE";
-            this.buttonModificarFile.UseVisualStyleBackColor = false;
+            this.buttonPools.AccessibleName = "buttonPools";
+            this.buttonPools.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonPools.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPools.Location = new System.Drawing.Point(682, 112);
+            this.buttonPools.Name = "buttonPools";
+            this.buttonPools.Size = new System.Drawing.Size(87, 32);
+            this.buttonPools.TabIndex = 11;
+            this.buttonPools.Text = "Pools";
+            this.buttonPools.UseVisualStyleBackColor = false;
+            this.buttonPools.Click += new System.EventHandler(this.buttonPools_Click);
             // 
             // textPass
             // 
@@ -263,7 +263,7 @@ namespace Triaje
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.textPass);
-            this.Controls.Add(this.buttonModificarFile);
+            this.Controls.Add(this.buttonPools);
             this.Controls.Add(this.buttonModificarHost);
             this.Controls.Add(this.labelIP);
             this.Controls.Add(this.buttonDeleteFile);
@@ -299,7 +299,7 @@ namespace Triaje
         private System.Windows.Forms.Button buttonDeleteFile;
         private System.Windows.Forms.Label labelIP;
         private System.Windows.Forms.Button buttonModificarHost;
-        private System.Windows.Forms.Button buttonModificarFile;
+        private System.Windows.Forms.Button buttonPools;
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.ColumnHeader columnId;

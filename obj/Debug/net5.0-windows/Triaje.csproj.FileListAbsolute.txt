@@ -23,3 +23,5 @@ C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\ne
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FramePrincipal.resources
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.Properties.Resources.resources
 C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FrameInfo.resources
+C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FramePools.resources
+C:\Users\F1rstree\Desktop\NETcore\TriajeHashes\Triaje\Triaje\Triaje\obj\Debug\net5.0-windows\Triaje.FramePool.resources
