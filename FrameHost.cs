@@ -12,28 +12,24 @@ namespace Triaje
 {
     public partial class FrameHost : Form
     {
-        private FramePrincipal frameInicial;
         private HostObject host;
         private int modo;//0 crear, 1 modificar
-        public FrameHost(FramePrincipal frameInicial)
+        public FrameHost()
         {
             modo = 0;
-            this.frameInicial = frameInicial;
             InitializeComponent();
         }
-        public FrameHost(FramePrincipal frameInicial, HostObject host)
+        public FrameHost(HostObject host)
         {//si le pasamos el host significa que estamos modificando
             modo = 1;
-            this.frameInicial = frameInicial;
             this.host = host;
             InitializeComponent();
             modoModificacion();
         }
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            new FramePrincipal().Show();
             Close();
-            FramePrincipal framePrincipal = new FramePrincipal();
-            framePrincipal.Show();
         }
         private void modoModificacion()
         {
@@ -52,9 +48,9 @@ namespace Triaje
                 host.setUser(textUser.Text);
             }
             host.hostToArchivo(host);
+            
+            new FramePrincipal().Show();
             Close();
-            FramePrincipal framePrincipal = new FramePrincipal();
-            framePrincipal.Show();
         }
 
         private void FrameHost_FormClosing(object sender, FormClosingEventArgs e)

@@ -22,9 +22,8 @@ namespace Triaje
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            new FramePrincipal().Show();
             Close();
-            FramePrincipal framePrincipal = new FramePrincipal();
-            framePrincipal.Show();
         }
     }
 }

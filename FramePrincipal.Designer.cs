@@ -190,6 +190,7 @@ namespace Triaje
             this.buttonDeleteFile.TabIndex = 8;
             this.buttonDeleteFile.Text = "- FILE";
             this.buttonDeleteFile.UseVisualStyleBackColor = false;
+            this.buttonDeleteFile.Click += new System.EventHandler(this.buttonDeleteFile_Click);
             // 
             // labelIP
             // 
@@ -223,6 +224,7 @@ namespace Triaje
             // 
             this.buttonPools.AccessibleName = "buttonPools";
             this.buttonPools.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonPools.Enabled = false;
             this.buttonPools.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonPools.Location = new System.Drawing.Point(682, 112);
             this.buttonPools.Name = "buttonPools";

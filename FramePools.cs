@@ -16,31 +16,32 @@ namespace Triaje
 {
     public partial class FramePools : Form
     {
-        public FramePrincipal framePrincipal;
-        private ArrayList pools = new ArrayList();
-        public FramePools(FramePrincipal framePrincipal )
+        private HostObject host;
+        public FramePools(HostObject host)
         {
             InitializeComponent();
-            this.framePrincipal = framePrincipal;
+            this.host = host;
             cargarDatos();
+
         }
 
         public void cargarDatos()
         {
-
             string[] dirs = Directory.GetFiles(Application.UserAppDataPath, "*", SearchOption.AllDirectories);
             int x = 1;
             comboPools.Items.Clear();
             foreach (string dir in dirs)
             {
-                Debug.WriteLine("*** "+dir.Split(".").Last());
+                //Debug.WriteLine("*** "+dir.Split(".").Last());
                 if (dir.Split(".").Last().Equals("pool"))
                 {
-                    Debug.WriteLine("*** " + dir);
+                    //Debug.WriteLine("*** " + dir);
                     comboPools.Items.Add(leerDatosPool(dir).getNombre());
                     x++;
                 }
              }
+
+            labelHost.Text = host.getNombre() + " - "+host.getIP() ;
         }
         
 
@@ -62,13 +63,52 @@ namespace Triaje
             // Debug.WriteLine("*** "+ textNombre.Text);
             PoolObject pool = new PoolObject(textNombre.Text);
             pool.poolToArchivo(pool);
-            new FramePool(this, pool).Show();
+            new FramePool(pool,host).Show();
             Close();
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
+            int error;
+            foreach (ArchivoObject archivo in leerDatosPool(Application.UserAppDataPath + "/" + comboPools.SelectedItem.ToString() + ".pool").getPool())
+            {
+                error = host.descargarArchivo(archivo.getPath(), textPass.Text, archivo.getNombre());
+                if (error == 0)
+                {//archivo descargado sin errores
+                    host.addArchivo(archivo);
+                    host.hostToArchivo(host);
+                }
+            }
+            new FramePrincipal().Show();
+            Close();
+        }
 
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            PoolObject pool = leerDatosPool(Application.UserAppDataPath+"/"+comboPools.SelectedItem.ToString()+".pool");
+            new FramePool(pool,host).Show();
+            Close();
+        }
+
+        private void comboPools_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonAgregar.Enabled = true;
+            buttonModificar.Enabled = true;
+            buttonEliminar.Enabled = true;
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            new FramePrincipal().Show();
+            Close();
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            File.Delete(Application.UserAppDataPath + "/" + comboPools.SelectedItem.ToString() + ".pool");
+
+            new FramePools(host).Show();
+            Close();
         }
     }
 }

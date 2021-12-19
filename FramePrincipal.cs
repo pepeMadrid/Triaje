@@ -90,9 +90,9 @@ namespace Triaje
 
         private void buttonEmpezar_Click(object sender, EventArgs e)
         {
+            
+            new FrameHost().Show();
             Hide();
-            FrameHost hostFrame = new FrameHost(this);
-            hostFrame.Show();
         }
 
         private void comboHosts_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,13 +103,14 @@ namespace Triaje
             buttonModificarHost.Enabled = true;
             buttonAddFile.Enabled = true;
             buttonStart.Enabled = true;
+            buttonPools.Enabled = true;
+            buttonDeleteFile.Enabled = true;
         }
 
         private void buttonAddFile_Click(object sender, EventArgs e)
         {
+            new FrameArchivo(leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree")).Show();
             Hide();
-            FrameArchivo hostFrame = new FrameArchivo(this, leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree"));
-            hostFrame.Show();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -147,10 +148,9 @@ namespace Triaje
         private void buttonDeleteHost_Click(object sender, EventArgs e)
         {
             Directory.Delete(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem,true);
-
+            
+            new FramePrincipal().Show();
             Hide();
-            FramePrincipal framePrincipal = new FramePrincipal();
-            framePrincipal.Show();
         }
         private void comboHosts_Click(object sender, EventArgs e)
         {
@@ -159,9 +159,9 @@ namespace Triaje
 
         private void buttonModificarHost_Click(object sender, EventArgs e)
         {
+            
+            new FrameHost(leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree")).Show();
             Hide();
-            FrameHost hostFrame = new FrameHost(this, leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree"));
-            hostFrame.Show();
         }
 
         private void FramePrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -176,9 +176,23 @@ namespace Triaje
 
         private void buttonPools_Click(object sender, EventArgs e)
         {
+            new FramePools(leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree")).Show();
             Hide();
-            FramePools hostPools = new FramePools(this);
-            hostPools.Show();
+        }
+
+        private void buttonDeleteFile_Click(object sender, EventArgs e)
+        {
+            HostObject host = leerDatosHost(Application.UserAppDataPath + @"\" + comboHosts.SelectedItem + @"\" + comboHosts.SelectedItem + ".f1rstree");
+            if (listArchivos.SelectedItems.Count > 0)
+            {
+                for (int x = 0; x < listArchivos.SelectedItems.Count; x++)
+                {
+                    host.removeArchivo(listArchivos.SelectedItems[x].SubItems[1].Text);
+                }
+            }
+            host.hostToArchivo(host);
+
+            cargarArchivos();
         }
     }
 }

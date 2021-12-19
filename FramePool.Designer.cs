@@ -111,6 +111,7 @@ namespace Triaje
             this.buttonCancelar.TabIndex = 21;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // label1
             // 
@@ -186,7 +187,6 @@ namespace Triaje
             // 
             this.buttonDeleteFile.AccessibleName = "buttonDeleteFile";
             this.buttonDeleteFile.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonDeleteFile.Enabled = false;
             this.buttonDeleteFile.Font = new System.Drawing.Font("Linux Biolinum G", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonDeleteFile.Location = new System.Drawing.Point(543, 103);
             this.buttonDeleteFile.Name = "buttonDeleteFile";
@@ -194,6 +194,7 @@ namespace Triaje
             this.buttonDeleteFile.TabIndex = 34;
             this.buttonDeleteFile.Text = "- FILE";
             this.buttonDeleteFile.UseVisualStyleBackColor = false;
+            this.buttonDeleteFile.Click += new System.EventHandler(this.buttonDeleteFile_Click);
             // 
             // buttonAddFile
             // 
@@ -208,10 +209,11 @@ namespace Triaje
             this.buttonAddFile.UseVisualStyleBackColor = false;
             this.buttonAddFile.Click += new System.EventHandler(this.buttonAddFile_Click);
             // 
-            // FramePoolModificar
+            // FramePool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(669, 388);
             this.Controls.Add(this.buttonDeleteFile);
             this.Controls.Add(this.buttonAddFile);
@@ -225,7 +227,8 @@ namespace Triaje
             this.Controls.Add(this.textNombre);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.buttonCancelar);
-            this.Name = "FramePoolModificar";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FramePool";
             this.Text = "FramePools";
             this.ResumeLayout(false);
             this.PerformLayout();

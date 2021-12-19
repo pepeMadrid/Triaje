@@ -57,6 +57,17 @@ namespace Triaje
         {
             return archivos;
         }
+
+        public void removeArchivo(string nombre)
+        {//search + delete
+            ArchivoObject archivoAux;
+            for (int x = 0; x < archivos.Count; x++)
+            {
+                archivoAux = (ArchivoObject)archivos[x];
+                if (archivoAux.getNombre().Equals(nombre))
+                    archivos.Remove(archivoAux);
+            }
+        }
         public void hostToArchivo(HostObject host)
         {
             if (!Directory.Exists(Application.UserAppDataPath + "/" + nombre))
